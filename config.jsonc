@@ -2,13 +2,13 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "source": "C:/ProgramData/fastfetch/sun.txt",
-    "type": "none",
+    "type": "file",
     "color": {
-      "1":"#ffa601",
-      "2":"#ff9601",
-      "3":"#ff8401",
-      "4":"#ff7301",
-      "5":"#ff5a01"
+      "1": "#4a48ad",
+      "2": "#9381ff",
+      "3": "#9fa1ff",
+      "4": "#b8b8ff",
+      "5": "#9fd8cb"
     },
     "padding": {
       "top": 4,
@@ -19,9 +19,11 @@
   "display": {
     "bar": {
       "char": {
-        "total": "▢"
+        "total": "•",
+        // "elapsed": "■",
+        "elapsed": "\u001b[34m■\u001b[0m",
       },
-      "width": 5
+      "width": 10
     },
     "percent": {
       "type": 3,
@@ -40,153 +42,137 @@
       "key": "Tawantong Wongrinyong",
       "keyWidth": 23,
       "keyColor": "cyan",
-      "format": "{#36}{1} | {2}"
+      // "format": "{#36}{1} | {2}",
+      "format": "{#36}@RISMZUN | {2}"
     },
     {
       "type": "datetime",
       "key": " ",
-      "format": "{9} / {23} / {6} / {1} {14}:{18}:{20} | THAILAND"
+      "format": "📆 {9} / {23} / {6} / {1} {14}:{18}:{20} \u001b[48;2;184;184;255m\u001b[38;2;0;0;0m THAILAND \u001b[0m"
     },
     "break",
     {
       "type": "custom",
-      "key": "╭─ System ───┬────────────────────────────────────────╮",
-      "keyColor": "green"
+      "key": "┏━━ System ━━┓",
+      "keyColor": "#9381ff"
     },
     {
       "type": "host",
-      "key": "├── PC       │                                        │",
-      "keyColor": "green"
+      "key": "┃ 󰇄 PC       ┃",
+      "keyColor": "#9381ff",
+      "format": "{5} {2} \u001b[38;2;147;129;255m{3}\u001b[0m"
     },
-
     {
       "type": "os",
-      "key": "├── OS       │                                        │",
-      "keyColor": "green",
-      "format": "{3} "
-    },
-
-    {
-      "type": "packages",
-      "key": "├── Packages │                                        │",
-      "keyColor": "green"
+      "key": "┃  OS       ┃",
+      "keyColor": "#9381ff",
+      "format": "{4} \u001b[38;2;147;129;255m({10})\u001b[0m"
     },
     {
       "type": "uptime",
-      "key": "├── Uptime   │                                        │",
-      "keyColor": "green"
+      "key": "┃  Uptime   ┃",
+      "keyColor": "#9381ff"
     },
     {
       "type": "custom",
-      "key": "╰────────────┴────────────────────────────────────────╯",
-      "keyColor": "green"
-    },
-    {
-      "type": "custom",
-      "key": "╭─ Terminal ─┬────────────────────────────────────────╮",
-      "keyColor": "#FF9601"
+      "key": "┣━ Terminal ━┫",
+      "keyColor": "#9fa1ff"
     },
     {
       "type": "shell",
-      "key": "├── Shell    │                                        │",
-      "keyColor": "#FF9601"
+      "key": "┃  Shell    ┃",
+      "keyColor": "#9fa1ff"
     },
     {
       "type": "terminal",
-      "key": "├── Terminal │                                        │",
-      "keyColor": "#FF9601"
+      "key": "┃  Terminal ┃",
+      "keyColor": "#9fa1ff"
     },
     {
       "type": "terminalfont",
-      "key": "├── Font     │                                        │",
-      "keyColor": "#FF9601"
+      "key": "┃  Font     ┃",
+      "keyColor": "#9fa1ff"
     },
     {
       "type": "terminalsize",
-      "key": "├── Size     │                                        │",
-      "keyColor": "#FF9601",
+      "key": "┃ 󰉿 Size     ┃",
+      "keyColor": "#9fa1ff",
       "format": "{1} colums × {2} rows ({3}px × {4}px)"
     },
     {
       "type": "custom",
-      "key": "╰────────────┴────────────────────────────────────────╯",
-      "keyColor": "#FF9601"
-    },
-    {
-      "type": "custom",
-      "key": "╭─ Hardware ─┬────────────────────────────────────────────╮",
-      "keyColor": "red"
+      "key": "┣━ Hardware ━┫",
+      "keyColor": "#b8b8ff"
     },
     {
       "type": "display",
-      "key": "├── Display  │                                            │",
-      "keyColor": "red",
+      "key": "┃  Display  ┃",
+      "keyColor": "#b8b8ff",
       // "format": "{1}×{2}, {3}Hz [{7}] ",
-      "format": "{1}×{2}, {3}Hz [{6}]"
+      "format": "{1}×{2}, {24}Hz \u001b[38;2;184;184;255m[{6}]\u001b[0m"
     },
     {
       "type": "cpu",
-      "key": "├── CPU      │                                            │",
-      "keyColor": "red",
+      "key": "┃ 󰍛 CPU      ┃",
+      "keyColor": "#b8b8ff",
       "format": "Intel(R) Core(TM) i5-1240P [{3} cores]"
     },
-
     {
       "type": "gpu",
-      "key": "├── GPU      │                                            │",
-      "keyColor": "red",
+      "key": "┃ 󰕮 GPU      ┃",
+      "keyColor": "#b8b8ff",
       "format": "{2}"
     },
     {
       "type": "memory",
-      "key": "├── RAM      │                                            │",
-      "keyColor": "red"
+      "key": "┃  RAM      ┃",
+      "keyColor": "#b8b8ff",
+      "format": "{4} {1} / {2} \u001b[38;2;184;184;255m({3})\u001b[0m"
     },
     {
       "type": "disk",
-      "key": "├── Disk     │                                            │",
-      "keyColor": "red",
-      "format": "{13} {1} / {2} ({3})"
+      "key": "┃  Disk     ┃",
+      "keyColor": "#b8b8ff",
+      "format": "{13} {1} / {2} \u001b[38;2;184;184;255m({3})\u001b[0m"
     },
     {
       "type": "battery",
-      "key": "├── Battery  │                                            │",
-      "keyColor": "red",
-      "format": "{10} {4} ({5})"
+      "key": "┃ 󰂎 Battery  ┃",
+      "keyColor": "#b8b8ff",
+      "format": "{10} {4} \u001b[38;2;184;184;255m({5})\u001b[0m"
     },
     {
       "type": "custom",
-      "key": "╰────────────┴────────────────────────────────────────────╯",
-      "keyColor": "red"
+      "key": "┗━━━━━━━━━━━━┛",
+      "keyColor": "#b8b8ff"
     },
+    "break",
+    // {
+    //   "type": "custom",
+    //   "key": "\u001b[48;2;184;184;255m\u001b[38;2;0;0;0m time change but different \u001b[0m",
+    // },
     {
-      "type": "colors",
-      "key": "╭─ Media ────┬────────────────────────────────────────╮",
-      "keyColor": "blue",
-      "symbol": "diamond"
-    },
-    {
-      "type": "media",
-      "key": "├── Playing  │                                        │",
-      "keyColor": "blue",
-      "format": "\"{1:36}\""
+      "type": "custom",
+      "keyColor": "#9381ff",
+      "key": "⭐ DEV UNDERGROUND, MAKE SOMETHING HAPPEN ON THE CLOUD ☁️",
     },
     // {
     //   "type": "media",
-    //   "key": "├── Playing  │",
+    //   "key": "┃ Playing │                                        ",
     //   "keyColor": "blue",
-    //   "format": "\"{1}\" - {#1}{3}{#}"
+    //   "format": "\"{1:36}\""
     // },
     {
-      "type": "sound",
-      "key": "├── Sound    │                                        │",
-      "keyColor": "blue",
-      "format": "{2:20} {5} {3}"
+      "type": "media",
+      "key": "Playing ...",
+      "keyColor": "cyan",
+      "format": "\"{1}\" - {#1}{3}{#}"
     },
     {
-      "type": "custom",
-      "key": "╰────────────┴────────────────────────────────────────╯",
-      "keyColor": "blue"
-    }
+      "type": "sound",
+      "key": "Sound",
+      "keyColor": "cyan",
+      "format": "🔊 {2} {5} ({3})"
+    },
   ]
 }
